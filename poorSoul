@@ -1,0 +1,22 @@
+$ curl -G https://api.github.com/search/users   \
+    --data-urlencode 'q=followers:0'            \
+    --data-urlencode 'sort=joined'              \
+    --data-urlencode 'order=asc'                \
+    -H 'Accept: application/vnd.github.preview' \
+    | jq '.items[0,1,2] | {html_url, login, id}'
+
+{
+  "id": 30,
+  "login": "fanvsfan",
+  "html_url": "https://github.com/fanvsfan"
+}
+{
+  "id": 32,
+  "login": "railsjitsu",
+  "html_url": "https://github.com/railsjitsu"
+}
+{
+  "id": 44,
+  "login": "errfree",
+  "html_url": "https://github.com/errfree"
+}
